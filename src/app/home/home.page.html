@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true">
+  <div *ngIf="toast">
+    <div style="background-color: rgb(253, 253, 253);color: #db2b2b;width: 80%; padding: 2%; border-radius: 10px;
+    position: absolute; top: 10%; left: 10%; font-size: 14px; z-index: 999999; text-align: center;">{{mensajeToast}}</div>
+  </div>
+  <button style="display: flex; justify-content: start; align-items: center; font-size: larger; margin: 1rem 1rem;
+  border-radius: 15px; text-decoration: underline; background-color: bisque;
+  color: gray;"  routerLink="/login"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+</svg>Cerrar sesión</button>
+<!-- <p>x: {{x}}</p>
+<p>y: {{y}}</p>
+<p>z:{{z}}</p> -->
+<div style="width: 100%; height: 80%; display: flex; justify-content: center; align-items: center; font-size: 22px;" *ngIf='!sharedService.botonActivo'>
+      <ion-chip style="width: 100%; height: 60%; border-radius: 50%;">
+        <img src="./../../assets/offRojo.png" alt="" width="400px" (click)='sharedService.botonActivo = !sharedService.botonActivo;this.vibrarSiSeMovioElEquipo()'>
+      </ion-chip>
+    </div>
+    <div style="width: 100%; height: 80%; display: flex; justify-content: center; align-items: center; font-size: 22px;" *ngIf='sharedService.botonActivo'>
+      <ion-chip style="width: 100%; height: 60%; border-radius: 50%;">
+        <img src="./../../assets/offVerde.png" alt="" width="400px" (click)='validarContrasenia()'>
+      </ion-chip>
+    </div>
+    <div *ngIf='pedirContrasenia' style="position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: center; 
+      align-items: center; background-color: #8853495c; height: 100%;">
+      <div style="display: grid; justify-content: center; margin-top: 4rem; padding: 10px;">
+        <div style="display: grid; justify-content: center; background-color: bisque; border-radius: 10px; padding: 10px;">
+          <label style="color: #db2b2b; font-size: 18px; text-align: center;">Ingrese contraseña</label>
+          <input type="password" style=" margin-top: 0.5rem; border: none; border-radius: 10px; padding: 1rem;color: #db2b2b; text-align: center;" [(ngModel)]='password'>
+          <ion-chip style=" width: 95%; height: 65%; border-radius: 49px; margin-top: 1rem;">
+            <button style="border: none; width: 100%; padding: 10px; display: flex; border-radius: 20px; background-color: #db2b2bba;
+            justify-content: center;" (click)='compararContrasenias()'>Desactivar</button> 
+          </ion-chip>
+        </div>
+      </div>
+    </div>
+</ion-content>

@@ -1,0 +1,18 @@
+#splashAnimado{
+    position: absolute; 
+    top: 10rem;
+    animation-name: atrapando;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    width: 300px;
+    height: 300px;
+    //visibility: hidden;
+}
+
+@keyframes atrapando {
+    0%   {width: 0;transition: width 1s, height 1s, transform 1s}
+    50%  {width: 300px;transition: width 1s, height 1s, transform 1s}
+    100% {width: 0;transition: width 1s, height 1s, transform 1s}    
+    50%  {width: 300px;transition: width 1s, height 1s, transform 1s}
+    0%   { width: 0;transition: width 1s, height 1s, transform 1s}
+}

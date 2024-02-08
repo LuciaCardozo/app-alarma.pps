@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>vibrator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  <ion-button (click)="medir()">empezar</ion-button>
+
+  <h1>{{acelerometro.x}}</h1>
+  <h1>{{acelerometro.y}}</h1>
+  <h1>{{acelerometro.z}}</h1>
+</ion-content>
